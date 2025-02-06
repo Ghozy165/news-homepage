@@ -88,21 +88,17 @@ header {
   margin-bottom: clamp(2rem, 1.5714rem + 2.1429vw, 3.5rem);
 }
 
-.navbar > .burger-menu {
-  display: none;
-}
-
 .nav-links {
   display: none;
   align-items: center;
   justify-content: center;
   gap: 2.25rem;
 }
-.nav-links > li > a {
+.nav-links > ul > li > a {
   color: var(--dark-grayish-blue);
 }
-.nav-active {
-  display: flex;
+.nav-links > ul > li > a:hover {
+  color: var(--soft-red);
 }
 
 .container {
@@ -241,12 +237,80 @@ hr {
 }
 
 
+@media (max-width: 768px) {
+  .navbar {
+    position: relative; 
+    z-index: 1; 
+  }
+  .navbar > .burger-menu {
+    display: block;
+    background: none;
+    border: none;
+  }
+  .burger-icon > img {
+    width: 30px;
+    height: 30px;
+  }
+  .nav-links {
+    position: fixed; 
+    background-color: #111;
+    top: 0;
+    right: 0;
+    height: 100%; 
+    width: 65%; 
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    transition: transform 3s ease-in-out;
+    transform: translateX(100%);
+    padding: 1.5rem;
+    z-index: 3;
+  }
+  .nav-active {
+    display: flex;
+    transform: translateX(0);
+  }
+  .nav-links > ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out; 
+    z-index: 2;
+  }
+  
+  .overlay-active {
+    display: block;
+    opacity: 1;
+  }
+}
 @media (min-width: 769px) {
   .container {
     gap: 2rem;
   }
+  .navbar > .burger-menu, .nav-links > .burger-menu {
+    display: none;
+  }
   .nav-links {
     display: flex;
+    flex-direction: row;
+  }
+  .nav-links > ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2.25rem;
   }
   picture {
     grid-column: span 2;
