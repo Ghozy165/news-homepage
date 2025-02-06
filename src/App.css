@@ -242,7 +242,7 @@ hr {
     position: relative; 
     z-index: 1; 
   }
-  .navbar > .burger-menu {
+  .navbar > .burger-menu, .nav-links > .burger-menu {
     display: block;
     background: none;
     border: none;
@@ -253,7 +253,7 @@ hr {
   }
   .nav-links {
     position: fixed; 
-    background-color: #111;
+    background-color: var(--off-white);
     top: 0;
     right: 0;
     height: 100%; 
