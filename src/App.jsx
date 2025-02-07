@@ -5,13 +5,6 @@ import Aside from './components/Aside'
 import OtherPost from './components/OtherPost'
 
 function App() {
-
-  const [navActive, setNavActive] = useState(false)
-
-  const handleNavToggle = () => {
-    setNavActive(!navActive)
-  }
-
   return (
     <>
       <Navbar />
