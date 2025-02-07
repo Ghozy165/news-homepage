@@ -157,6 +157,8 @@ p {
 }
 
 aside {
+  max-height: 550px;
+  overflow-y: auto;
   grid-column: span 2;
   background-color: var(--very-dark-blue);
   display: flex;
