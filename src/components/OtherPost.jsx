@@ -27,7 +27,7 @@ export default function OtherPost(){
       <section className='other-post' id='other-post' aria-labelledby="other-post-title">
         <h2 className="sr-only" id="other-post-title">Other Posts</h2>
         {posts.map((post, index) =>
-            <article className="card-other-post" key={post.id} role="listitem">
+            <article className="card-other-post" key={post.id}>
                 <div className="image">
                   <img src={post.image} alt={post.alt} />
                 </div>
