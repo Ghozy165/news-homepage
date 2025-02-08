@@ -32,7 +32,7 @@ export default function OtherPost(){
                 </div>
                 <div className="info-other-post">
                   <h3>{String(index + 1).padStart(2, "0")}</h3>
-                  <a href='javascript:void(0);'>{post.title}</a>
+                  <a href='#' onClick={(e) => { e.preventDefault();}}>{post.title}</a>
                   <p>{post.description}</p>
                 </div>
             </article>

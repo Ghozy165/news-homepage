@@ -325,3 +325,11 @@ hr {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .nav-links {
+    background-color: var(--dark-grayish-blue);
+  }
+  .nav-links > ul > li > a {
+    color: var(--off-white);
+  }
+}

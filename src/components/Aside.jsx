@@ -27,7 +27,7 @@ export default function Aside(){
             <h2 id="aside-heading">New</h2>
             {articles.map((article, index) => (
                 <article className="card-aside" key={index}>
-                    <a href='#'>{article.title}</a>
+                    <a href='#' onClick={(e) => { e.preventDefault();}}>{article.title}</a>
                     <p>{article.description}</p>
                     {index < articles.length - 1 && <hr />}
                 </article>
