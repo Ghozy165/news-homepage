@@ -24,15 +24,21 @@ const posts = [
 
 export default function OtherPost(){
     return (
-      <section className='other-post' id='other-post'>
+      <section className='other-post' id='other-post' aria-labelledby="other-post-title">
+        <h2 className="sr-only" id="other-post-title">Other Posts</h2>
         {posts.map((post, index) =>
-            <article className="card-other-post" key={post.id}>
+            <article className="card-other-post" key={post.id} role="listitem">
                 <div className="image">
                   <img src={post.image} alt={post.alt} />
                 </div>
                 <div className="info-other-post">
                   <h3>{String(index + 1).padStart(2, "0")}</h3>
-                  <a href='#' onClick={(e) => { e.preventDefault();}}>{post.title}</a>
+                  <a href='#' 
+                    onClick={(e) => { e.preventDefault();}}
+                    aria-label={`Read more about ${post.title}`}
+                  >
+                      {post.title}
+                  </a>
                   <p>{post.description}</p>
                 </div>
             </article>

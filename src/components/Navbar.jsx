@@ -33,7 +33,7 @@ export default function Navbar(){
               </div>
               <div 
                 className={`nav-links ${navActive ? 'nav-active' : ''}`}
-                aria-hidden={!navActive}
+                hidden={!navActive}
               >
                 <button 
                   className='burger-menu' 
